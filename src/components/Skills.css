@@ -1,0 +1,131 @@
+:root {
+  --delay: 0.5s;
+  --timing: 1s;
+}
+
+.box-outer {
+  overflow: hidden;
+  /* margin:0 auto; */
+  width: 5rem;
+  height: 5rem;
+  text-align: center;
+}
+.main_box {
+  width: 5rem;
+  height: 5rem;
+  position: relative;
+  background: transparent;
+  border: 0.5rem solid rgb(32, 180, 18);
+  padding: 0.4rem;
+}
+.bar {
+  position: absolute;
+  width: 5rem;
+  height: 0.5rem;
+  background: #fff;
+  transition: all var(--timing) linear;
+  -webkit-animation-duration: var(--timing);
+  animation-duration: var(--timing);
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.item-name {
+  font-size: 1.4rem !important;
+  border: 3px solid white;
+  padding:0.1rem;
+}
+.bar.delay {
+  animation-delay: var(--delay);
+  -webkit-animation-delay: var(--delay);
+}
+.top {
+  top: -0.5rem;
+  left: -0.5rem;
+}
+.right {
+  top: 1.8rem;
+  right: -2.8rem;
+  transform: rotate(90deg);
+}
+.bottom {
+  bottom: -0.5rem;
+  left: -0.5rem;
+}
+.left {
+  top: 1.8rem;
+  left: -2.8rem;
+  transform: rotate(90deg);
+}
+
+.top,
+.bottom {
+  -webkit-animation-name: h-move;
+  animation-name: h-move;
+}
+
+.right,
+.left {
+  -webkit-animation-name: v-move;
+  animation-name: v-move;
+}
+
+@media screen and (min-width: 600px) {
+  .main_box {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .box-outer {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .right,
+  .left {
+    -webkit-animation-name: v-move;
+    animation-name: v-move;
+  }
+
+  @-webkit-keyframes v-move {
+    0% {
+      top: -0.5rem;
+    }
+    100% {
+      top: 22.8rem;
+    }
+  }
+  @keyframes v-move {
+    0% {
+      top: -0.5rem;
+    }
+    100% {
+      top: 22.8rem;
+    }
+  }
+
+  @-webkit-keyframes h-move {
+    0% {
+      left: -0.5rem;
+    }
+    100% {
+      left: 20rem;
+    }
+  }
+  @keyframes h-move {
+    0% {
+      left: -0.5rem;
+    }
+    100% {
+      left: 20rem;
+    }
+  }
+
+  .top,
+  .bottom {
+    -webkit-animation-name: h-move;
+    animation-name: h-move;
+  }
+}
