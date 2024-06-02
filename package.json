@@ -25,6 +25,7 @@
     "sass": "^1.62.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.0.0-rc.1",
+    "t": "^0.5.1",
     "typewriter-effect": "^2.19.0"
   },
   "devDependencies": {
